@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-	<title>CoderDocs - Bootstrap Documentation Template For Software Projects</title>
+	<title>AjudaQui - Seu site dos links</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
