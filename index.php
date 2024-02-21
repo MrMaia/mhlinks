@@ -75,7 +75,7 @@
 							<div class="card-body">
 								<h5 class="card-title mb-3">
 									<span class="theme-icon-holder card-icon-holder me-2">
-										<i class="fa-solid fa-file-zipper"></i>
+										<i class="fa-solid fa-magnet"></i>
 									</span><!--//card-icon-holder-->
 									<span class="card-title-text">Torrents</span>
 								</h5>
@@ -111,7 +111,7 @@
 							<div class="card-body">
 								<h5 class="card-title mb-3">
 									<span class="theme-icon-holder card-icon-holder me-2">
-										<i class="fas fa-tools"></i>
+										<i class="fa-solid fa-toolbox"></i>
 									</span><!--//card-icon-holder-->
 									<span class="card-title-text">Utilitários</span>
 								</h5>
@@ -129,7 +129,7 @@
 							<div class="card-body">
 								<h5 class="card-title mb-3">
 									<span class="theme-icon-holder card-icon-holder me-2">
-										<i class="fas fa-laptop-code"></i>
+										<i class="fa-solid fa-right-left"></i>
 									</span><!--//card-icon-holder-->
 									<span class="card-title-text">Conversores</span>
 								</h5>
@@ -147,7 +147,7 @@
 							<div class="card-body">
 								<h5 class="card-title mb-3">
 									<span class="theme-icon-holder card-icon-holder me-2">
-										<i class="fas fa-tablet-alt"></i>
+										<i class="fa-solid fa-desktop"></i>
 									</span><!--//card-icon-holder-->
 									<span class="card-title-text">Softwares</span>
 								</h5>
@@ -165,7 +165,7 @@
 							<div class="card-body">
 								<h5 class="card-title mb-3">
 									<span class="theme-icon-holder card-icon-holder me-2">
-										<i class="fas fa-book-reader"></i>
+										<i class="fa-solid fa-robot"></i>
 									</span><!--//card-icon-holder-->
 									<span class="card-title-text">IAs</span>
 								</h5>
@@ -183,7 +183,7 @@
 							<div class="card-body">
 								<h5 class="card-title mb-3">
 									<span class="theme-icon-holder card-icon-holder me-2">
-										<i class="fas fa-lightbulb"></i>
+										<i class="fa-solid fa-network-wired"></i>
 									</span><!--//card-icon-holder-->
 									<span class="card-title-text">APIs</span>
 								</h5>

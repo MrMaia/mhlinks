@@ -43,7 +43,7 @@
 								<div class="card-text">
 									Links de recursos para Frontend.
 								</div>
-								<a class="card-link-mask" href="docs-page.html#section-1"></a>
+								<a class="card-link-mask" href="lista_links.php"></a>
 							</div><!--//card-body-->
 						</div><!--//card-->
 					</div><!--//col-->
