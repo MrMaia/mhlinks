@@ -67,6 +67,9 @@ try {
     <label for="descricao">Descrição:</label><br>
     <textarea id="descricao" name="descricao" required></textarea><br><br>
 
+    <label for="link">Link:</label><br>
+    <input type="text" id="link" name="link" required><br><br>
+
     <input type="submit" value="Enviar">
   </form>
 
@@ -93,9 +96,9 @@ try {
   // Verifica se o formulário foi enviado
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se todos os campos obrigatórios do formulário estão preenchidos
-    if (!empty($_POST['id_categoria']) && !empty($_POST['imagem']) && !empty($_POST['nome']) && !empty($_POST['descricao'])) {
+    if (!empty($_POST['id_categoria']) && !empty($_POST['imagem']) && !empty($_POST['nome']) && !empty($_POST['descricao']) && !empty($_POST['link'])) {
       // Prepara a instrução SQL para inserir dados na tabela link
-      $sql = "INSERT INTO link (id_categoria, id_sub_categoria, imagem, nome, descricao) VALUES (:id_categoria, :id_sub_categoria, :imagem, :nome, :descricao)";
+      $sql = "INSERT INTO link (id_categoria, id_sub_categoria, imagem, nome, descricao, link) VALUES (:id_categoria, :id_sub_categoria, :imagem, :nome, :descricao, :link)";
 
       try {
         // Prepara a consulta
@@ -116,6 +119,7 @@ try {
         $stmt->bindParam(':imagem', $_POST['imagem']);
         $stmt->bindParam(':nome', $_POST['nome']);
         $stmt->bindParam(':descricao', $_POST['descricao']);
+        $stmt->bindParam(':link', $_POST['link']);
 
         // Executa a consulta
         if ($stmt->execute()) {

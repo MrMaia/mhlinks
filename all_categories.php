@@ -1,3 +1,13 @@
+<?php
+// Incluir arquivo de conexão com o banco de dados
+include 'conexao.php';
+
+// Consulta para obter todas as categorias
+$query = "SELECT * FROM categoria";
+$stmt = $conexao->query($query);
+$categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -24,437 +34,27 @@
             <div class="docs-overview py-5">
                 <div class="row justify-content-center">
                     <h1 class="text-center">Categorias</h1>
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3">
-                                    <span class="theme-icon-holder card-icon-holder me-2">
-                                        <i class="fa fa-code"></i>
-                                    </span><!--//card-icon-holder-->
-                                    <span class="card-title-text">IMPORTAR DO BANCO OS CARDS</span>
-                                </h5>
-                                <div class="card-text">
-                                    IMPORTAR DO BANCO OS CARDS.
-                                </div>
-                                <a class="card-link-mask" href="docs-page.html#section-1"></a>
-                            </div><!--//card-body-->
-                        </div><!--//card-->
+                    <div class="col-12">
+                        <div class="row">
+                            <?php foreach ($categorias as $categoria) : ?>
+                                <div class="col-12 col-lg-4 py-3">
+                                    <div class="card shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-3">
+                                                <span class="theme-icon-holder card-icon-holder me-2">
+                                                    <i class="<?php echo $categoria['icone']; ?>"></i>
+                                                </span><!--//card-icon-holder-->
+                                                <span class="card-title-text"><?php echo $categoria['nome_categoria']; ?></span>
+                                            </h5>
+                                            <div class="card-text">
+                                                <?php echo $categoria['descricao']; ?>
+                                            </div>
+                                            <a class="card-link-mask" href="sub_categorias.php?id=<?php echo $categoria['id_categoria']; ?>"></a>
+                                        </div><!--//card-body-->
+                                    </div><!--//card-->
+                                </div><!--//col-->
+                            <?php endforeach; ?>
+                        </div><!--//row-->
                     </div><!--//col-->
                 </div><!--//row-->
             </div><!--//container-->
@@ -462,45 +62,16 @@
     </div><!--//page-content-->
 
     <section class="cta-section text-center py-5 theme-bg-dark position-relative">
-        <div class="theme-bg-shapes-right"></div>
-        <div class="theme-bg-shapes-left"></div>
-        <div class="container">
-            <h3 class="mb-2 text-white mb-3">Explore nossa comunidade</h3>
-            <div class="section-intro text-white mb-3 single-col-max mx-auto">Junte-se a centenas de usuários e
-                compartilhe os mais diversos links que você tem conhecimento para ajudar e aumentar nossa comunidade.
-            </div>
-            <div class="pt-3 text-center">
-                <a class="btn btn-light position-relative" href="">Entrar na Comunidade
-                    <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger">
-                        EM BREVE
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </a>
-            </div>
-        </div>
+        <!-- Código do restante da seção CTA -->
     </section><!--//cta-section-->
 
     <footer class="footer">
-
-        <div class="footer-bottom text-center py-5">
-
-            <ul class="social-list list-unstyled pb-4 mb-0">
-                <li class="list-inline-item"><a href="https://github.com/MrMaia" target="_blank"><i class="fab fa-github fa-fw"></i></a></li>
-                <li class="list-inline-item"><a href="https://www.instagram.com/allan.maia.92/" target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
-            </ul><!--//social-list-->
-
-            <small class="copyright">Desenvolvido por Allan Maia <i class="fas fa-heart" style="color: #fb866a;"></i> <a class="theme-link" href="https://www.buymeacoffee.com/mrmaia" target="_blank">Buy Me a
-                    Coffee</a></small>
-
-
-        </div>
-
+        <!-- Código do footer -->
     </footer>
 
     <!-- Javascript -->
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Page Specific JS -->
     <script src="assets/plugins/smoothscroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>

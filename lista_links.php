@@ -1,3 +1,18 @@
+<?php
+// Incluir arquivo de conexão com o banco de dados
+include 'conexao.php';
+
+// Verifica se o ID da subcategoria foi passado na URL
+if(isset($_GET['sub_categoria_id'])) {
+    $sub_categoria_id = $_GET['sub_categoria_id'];
+
+    // Consulta para obter os links relacionados à subcategoria selecionada
+    $query = "SELECT * FROM link WHERE id_sub_categoria = :sub_categoria_id";
+    $stmt = $conexao->prepare($query);
+    $stmt->bindParam(':sub_categoria_id', $sub_categoria_id);
+    $stmt->execute();
+    $links = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,13 +40,14 @@
         <div class="container py-5">
             <div class="row justify-content-center mb-3">
                 <div class="col-md-12 col-xl-10">
-                    <div class="card shadow-0 border rounded-3">
+                    <?php foreach ($links as $link) : ?>
+                    <div class="card shadow-0 border rounded-3 mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                                     <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp" class="w-100" />
-                                        <a href="#!">
+                                        <img src="<?php echo $link['imagem']; ?>" class="w-100" />
+                                        <a href="<?php echo $link['link']; ?>" target="_blank">
                                             <div class="hover-overlay">
                                                 <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
                                             </div>
@@ -39,160 +55,33 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6 col-xl-6">
-                                    <h5>Nome Site</h5>
-                                    <p class=" mb-4 mb-md-0">
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in some form, by injected humour, or
-                                        randomised words which don't look even slightly believable.
-                                    </p>
+                                    <h5><?php echo $link['nome']; ?></h5>
+                                    <p class="mb-4 mb-md-0"><?php echo $link['descricao']; ?></p>
                                 </div>
                                 <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                                     <div class="d-flex flex-column mt-4">
-                                        <button class="btn btn-primary btn-sm" type="button">Acessar</button>
-                                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">
-                                            Recomendar Site
-                                        </button>
+                                        <a class="btn btn-primary btn-sm" href="<?php echo $link['link']; ?>" target="_blank">Acessar</a>
+                                        <button class="btn btn-outline-primary btn-sm mt-2">Recomendar Site</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row justify-content-center mb-3">
-                <div class="col-md-12 col-xl-10">
-                    <div class="card shadow-0 border rounded-3">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-                                    <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp" class="w-100" />
-                                        <a href="#!">
-                                            <div class="hover-overlay">
-                                                <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                    <h5>Quant olap shirts</h5>
-                                    <div class="d-flex flex-row">
-                                        <div class="text-danger mb-1 me-2">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <span>289</span>
-                                    </div>
-                                    <div class="mt-1 mb-0 text-muted small">
-                                        <span>100% cotton</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>Light weight</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>Best finish<br /></span>
-                                    </div>
-                                    <div class="mb-2 text-muted small">
-                                        <span>Unique design</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>For men</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>Casual<br /></span>
-                                    </div>
-                                    <p class="text-truncate mb-4 mb-md-0">
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in some form, by injected humour, or
-                                        randomised words which don't look even slightly believable.
-                                    </p>
-                                </div>
-                                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                                    <div class="d-flex flex-row align-items-center mb-1">
-                                        <h4 class="mb-1 me-1">$14.99</h4>
-                                        <span class="text-danger"><s>$21.99</s></span>
-                                    </div>
-                                    <h6 class="text-success">Free shipping</h6>
-                                    <div class="d-flex flex-column mt-4">
-                                        <button class="btn btn-primary btn-sm" type="button">Details</button>
-                                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">
-                                            Add to wishlist
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-xl-10">
-                    <div class="card shadow-0 border rounded-3">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-                                    <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(5).webp" class="w-100" />
-                                        <a href="#!">
-                                            <div class="hover-overlay">
-                                                <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                    <h5>Quant ruybi shirts</h5>
-                                    <div class="d-flex flex-row">
-                                        <div class="text-danger mb-1 me-2">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <span>145</span>
-                                    </div>
-                                    <div class="mt-1 mb-0 text-muted small">
-                                        <span>100% cotton</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>Light weight</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>Best finish<br /></span>
-                                    </div>
-                                    <div class="mb-2 text-muted small">
-                                        <span>Unique design</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>For women</span>
-                                        <span class="text-primary"> • </span>
-                                        <span>Casual<br /></span>
-                                    </div>
-                                    <p class="text-truncate mb-4 mb-md-0">
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in some form, by injected humour, or
-                                        randomised words which don't look even slightly believable.
-                                    </p>
-                                </div>
-                                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                                    <div class="d-flex flex-row align-items-center mb-1">
-                                        <h4 class="mb-1 me-1">$17.99</h4>
-                                        <span class="text-danger"><s>$25.99</s></span>
-                                    </div>
-                                    <h6 class="text-success">Free shipping</h6>
-                                    <div class="d-flex flex-column mt-4">
-                                        <button class="btn btn-primary btn-sm" type="button">Details</button>
-                                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">
-                                            Add to wishlist
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </section>
 
-
-
     <?php include 'partials/community.php'; ?>
 
     <?php include 'partials/footer.php'; ?>
 </body>
+
+</html>
+<?php
+} else {
+    // Caso nenhum ID de subcategoria seja passado, exiba uma mensagem de erro ou redirecione para uma página de erro
+    echo "Erro: Subcategoria não especificada";
+}
+?>
