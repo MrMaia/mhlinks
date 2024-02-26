@@ -2,8 +2,8 @@
 // Incluir arquivo de conexão com o banco de dados
 include 'conexao.php';
 
-// Consulta para obter as nove primeiras categorias
-$query = "SELECT * FROM categoria LIMIT 9";
+// Consulta para obter todas as categorias
+$query = "SELECT * FROM categoria";
 $stmt = $conexao->query($query);
 $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -76,9 +76,15 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     }
 
                     // Exemplo de criação de categoria - Substitua os valores pelos seus dados reais
-                    foreach ($categorias as $categoria) {
-                        createCategoryCard($categoria['id_categoria'], $categoria['icone'], $categoria['nome_categoria'], $categoria['descricao']);
-                    }
+                    createCategoryCard(1, 'fa fa-code', 'Desenvolvimento', 'Section overview goes here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.');
+                    createCategoryCard(2, 'fas fa-gamepad', 'Jogos', 'Section overview goes here. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.');
+                    createCategoryCard(3, 'fa-solid fa-magnet', 'Torrents', 'Section overview goes here. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.');
+                    createCategoryCard(4, 'fa-solid fa-image', 'Imagens', 'Section overview goes here. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.');
+                    createCategoryCard(5, 'fa-solid fa-toolbox', 'Utilitários', 'Section overview goes here. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.');
+                    createCategoryCard(6, 'fa-solid fa-right-left', 'Conversores', 'Section overview goes here. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.');
+                    createCategoryCard(7, 'fa-solid fa-desktop', 'Softwares', 'Section overview goes here. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.');
+                    createCategoryCard(8, 'fa-solid fa-robot', 'IAs', 'Section overview goes here. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.');
+                    createCategoryCard(9, 'fa-solid fa-network-wired', 'APIs', 'Section overview goes here. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.');
                     ?>
                 </div><!--//row-->
             </div><!--//container-->
