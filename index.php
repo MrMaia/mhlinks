@@ -46,7 +46,7 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <a href="all_categories.php" class="text-center">Ver mais ></a>
                     <?php
                     // Define a função para criar uma categoria com base nos parâmetros fornecidos
-                    function createCategoryCard($categoryID, $iconClass, $title, $description) {
+                    function createCategoryCard($categoryID, $iconClass, $title, $description, $hasSubcategories) {
                         echo '<div class="col-12 col-lg-4 py-3">
                                 <div class="card shadow-sm">
                                     <div class="card-body">
@@ -58,13 +58,6 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         </h5>
                                         <div class="card-text">' . $description . '</div>';
                         // Verifica se a categoria tem subcategorias
-                        $hasSubcategories = false;
-                        foreach ($GLOBALS['categorias'] as $categoria) {
-                            if ($categoria['id_categoria'] == $categoryID) {
-                                $hasSubcategories = true;
-                                break;
-                            }
-                        }
                         if ($hasSubcategories) {
                             echo '<a class="card-link-mask" href="sub_categorias.php?id=' . $categoryID . '"></a>';
                         } else {
@@ -77,7 +70,13 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     // Exemplo de criação de categoria - Substitua os valores pelos seus dados reais
                     foreach ($categorias as $categoria) {
-                        createCategoryCard($categoria['id_categoria'], $categoria['icone'], $categoria['nome_categoria'], $categoria['descricao']);
+                        // Verifica se a categoria possui subcategorias
+                        $query_sub = "SELECT COUNT(*) AS total FROM sub_categoria WHERE id_categoria = :categoria_id";
+                        $stmt_sub = $conexao->prepare($query_sub);
+                        $stmt_sub->bindParam(':categoria_id', $categoria['id_categoria']);
+                        $stmt_sub->execute();
+                        $total_subcategorias = $stmt_sub->fetch(PDO::FETCH_ASSOC)['total'];
+                        createCategoryCard($categoria['id_categoria'], $categoria['icone'], $categoria['nome_categoria'], $categoria['descricao'], $total_subcategorias > 0);
                     }
                     ?>
                 </div><!--//row-->
