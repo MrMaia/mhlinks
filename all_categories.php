@@ -28,6 +28,7 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <?php include 'partials/header.php'; ?>
+    <?php include 'partials/hero.php'; ?>
 
     <div class="page-content">
         <div class="container">
@@ -49,7 +50,23 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <div class="card-text">
                                                 <?php echo $categoria['descricao']; ?>
                                             </div>
-                                            <a class="card-link-mask" href="sub_categorias.php?id=<?php echo $categoria['id_categoria']; ?>"></a>
+                                            <?php
+                                            // Verifica se a categoria possui sub-categorias
+                                            $query_sub = "SELECT COUNT(*) AS total FROM sub_categoria WHERE id_categoria = :categoria_id";
+                                            $stmt_sub = $conexao->prepare($query_sub);
+                                            $stmt_sub->bindParam(':categoria_id', $categoria['id_categoria']);
+                                            $stmt_sub->execute();
+                                            $total_subcategorias = $stmt_sub->fetch(PDO::FETCH_ASSOC)['total'];
+
+                                            if ($total_subcategorias > 0) {
+                                                // Se a categoria possuir sub-categorias, link para a página de sub-categorias
+                                                ?>
+                                                <a class="card-link-mask" href="sub_categorias.php?id=<?php echo $categoria['id_categoria']; ?>"></a>
+                                            <?php } else {
+                                                // Se a categoria não possuir sub-categorias, link para a página de links diretamente
+                                                ?>
+                                                <a class="card-link-mask" href="lista_links.php?id=<?php echo $categoria['id_categoria']; ?>"></a>
+                                            <?php } ?>
                                         </div><!--//card-body-->
                                     </div><!--//card-->
                                 </div><!--//col-->
@@ -61,13 +78,8 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div><!--//container-->
     </div><!--//page-content-->
 
-    <section class="cta-section text-center py-5 theme-bg-dark position-relative">
-        <!-- Código do restante da seção CTA -->
-    </section><!--//cta-section-->
-
-    <footer class="footer">
-        <!-- Código do footer -->
-    </footer>
+    <?php include 'partials/community.php'; ?>
+    <?php include 'partials/footer.php'; ?>
 
     <!-- Javascript -->
     <script src="assets/plugins/popper.min.js"></script>
