@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,8 @@
             margin-bottom: 20px;
         }
 
-        th, td {
+        th,
+        td {
             padding: 8px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -35,7 +37,8 @@
             background-color: #f5f5f5;
         }
 
-        .btn-editar, .btn-excluir {
+        .btn-editar,
+        .btn-excluir {
             padding: 5px 10px;
             border: none;
             cursor: pointer;
@@ -52,6 +55,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Listagem de Categorias</h1>
@@ -81,7 +85,7 @@
                 }
 
                 // Processamento do botão de exclusão de categoria
-                if(isset($_POST['excluir_categoria_id'])) {
+                if (isset($_POST['excluir_categoria_id'])) {
                     $id = $_POST['excluir_categoria_id'];
                     $sql_delete = "DELETE FROM categoria WHERE id_categoria = $id";
                     if ($conn->query($sql_delete) === TRUE) {
@@ -97,7 +101,7 @@
 
                 // Verifica se há resultados e lista as categorias
                 if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
+                    while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row["id_categoria"] . "</td>";
                         echo "<td>" . $row["icone"] . "</td>";
@@ -145,7 +149,7 @@
                 }
 
                 // Processamento do botão de exclusão de subcategoria
-                if(isset($_POST['excluir_subcategoria_id'])) {
+                if (isset($_POST['excluir_subcategoria_id'])) {
                     $id = $_POST['excluir_subcategoria_id'];
                     $sql_delete = "DELETE FROM sub_categoria WHERE id_sub_categoria = $id";
                     if ($conn->query($sql_delete) === TRUE) {
@@ -164,7 +168,7 @@
 
                 // Verifica se há resultados e lista as subcategorias
                 if ($result_sub->num_rows > 0) {
-                    while($row_sub = $result_sub->fetch_assoc()) {
+                    while ($row_sub = $result_sub->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row_sub["id_sub_categoria"] . "</td>";
                         echo "<td>" . $row_sub["nome_categoria"] . "</td>";
@@ -215,7 +219,7 @@
                 }
 
                 // Processamento do botão de exclusão de link
-                if(isset($_POST['excluir_link_id'])) {
+                if (isset($_POST['excluir_link_id'])) {
                     $id = $_POST['excluir_link_id'];
                     $sql_delete = "DELETE FROM link WHERE id_link = $id";
                     if ($conn->query($sql_delete) === TRUE) {
@@ -234,7 +238,7 @@
 
                 // Verifica se há resultados e lista os links
                 if ($result_link->num_rows > 0) {
-                    while($row_link = $result_link->fetch_assoc()) {
+                    while ($row_link = $result_link->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row_link["id_link"] . "</td>";
                         echo "<td>" . $row_link["nome_categoria"] . "</td>";
@@ -277,4 +281,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -28,7 +28,7 @@
                         <div class="card-body">
                             <?php
                             // Verifica se foi submetido um formulário de pesquisa
-                            if(isset($_GET['search'])) {
+                            if (isset($_GET['search'])) {
                                 // Recupera o termo de pesquisa
                                 $termo_pesquisa = $_GET['search'];
 

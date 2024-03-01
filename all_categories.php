@@ -60,11 +60,11 @@ $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                                             if ($total_subcategorias > 0) {
                                                 // Se a categoria possuir sub-categorias, link para a página de sub-categorias
-                                                ?>
+                                            ?>
                                                 <a class="card-link-mask" href="sub_categorias.php?id=<?php echo $categoria['id_categoria']; ?>"></a>
                                             <?php } else {
                                                 // Se a categoria não possuir sub-categorias, link para a página de links diretamente
-                                                ?>
+                                            ?>
                                                 <a class="card-link-mask" href="lista_links.php?id=<?php echo $categoria['id_categoria']; ?>"></a>
                                             <?php } ?>
                                         </div><!--//card-body-->

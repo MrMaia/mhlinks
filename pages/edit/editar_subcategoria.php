@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,8 @@
             margin-bottom: 10px;
         }
 
-        input[type="text"], textarea {
+        input[type="text"],
+        textarea {
             width: 100%;
             padding: 8px;
             margin-top: 6px;
@@ -49,12 +51,13 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Editar Subcategoria</h1>
         <?php
         // Verifica se o ID da subcategoria foi enviado via GET
-        if(isset($_GET['id'])) {
+        if (isset($_GET['id'])) {
             // Conexão com o banco de dados
             $servername = "127.0.0.1";
             $username = "root";
@@ -95,16 +98,16 @@
                 $row = $result->fetch_assoc();
                 // Exibição do formulário de edição com os dados atuais da subcategoria
         ?>
-        <form method="post">
-            <input type="hidden" name="id" value="<?php echo $row['id_sub_categoria']; ?>">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?php echo $row['nome']; ?>">
-            <label for="icone">Ícone:</label>
-            <input type="text" id="icone" name="icone" value="<?php echo $row['icone']; ?>">
-            <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao"><?php echo $row['descricao']; ?></textarea>
-            <input type="submit" value="Atualizar">
-        </form>
+                <form method="post">
+                    <input type="hidden" name="id" value="<?php echo $row['id_sub_categoria']; ?>">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="<?php echo $row['nome']; ?>">
+                    <label for="icone">Ícone:</label>
+                    <input type="text" id="icone" name="icone" value="<?php echo $row['icone']; ?>">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao"><?php echo $row['descricao']; ?></textarea>
+                    <input type="submit" value="Atualizar">
+                </form>
         <?php
             } else {
                 echo "<p>Subcategoria não encontrada.</p>";
@@ -118,4 +121,5 @@
         ?>
     </div>
 </body>
+
 </html>

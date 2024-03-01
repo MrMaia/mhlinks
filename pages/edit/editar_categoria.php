@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Link</title>
+    <title>Editar Categoria</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +25,8 @@
             margin-bottom: 10px;
         }
 
-        input[type="text"], textarea {
+        input[type="text"],
+        textarea {
             width: 100%;
             padding: 8px;
             margin-top: 6px;
@@ -49,12 +51,13 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Editar Link</h1>
+        <h1>Editar Categoria</h1>
         <?php
-        // Verifica se o ID do link foi enviado via GET
-        if(isset($_GET['id'])) {
+        // Verifica se o ID da categoria foi enviado via GET
+        if (isset($_GET['id'])) {
             // Conexão com o banco de dados
             $servername = "127.0.0.1";
             $username = "root";
@@ -72,50 +75,51 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $id = $_POST["id"];
                 $nome = $_POST["nome"];
+                $icone = $_POST["icone"];
                 $descricao = $_POST["descricao"];
-                $link = $_POST["link"];
 
-                // Atualiza os dados do link no banco de dados
-                $sql = "UPDATE link SET nome='$nome', descricao='$descricao', link='$link' WHERE id_link=$id";
+                // Atualiza os dados da categoria no banco de dados
+                $sql = "UPDATE categoria SET nome_categoria='$nome', icone='$icone', descricao='$descricao' WHERE id_categoria=$id";
 
                 if ($conn->query($sql) === TRUE) {
-                    echo "<p>Link atualizado com sucesso!</p>";
+                    echo "<p>Categoria atualizada com sucesso!</p>";
                 } else {
-                    echo "<p>Erro ao atualizar link: " . $conn->error . "</p>";
+                    echo "<p>Erro ao atualizar categoria: " . $conn->error . "</p>";
                 }
             }
 
-            // Prepara e executa a consulta para obter os dados do link com base no ID
+            // Prepara e executa a consulta para obter os dados da categoria com base no ID
             $id = $_GET['id'];
-            $sql = "SELECT * FROM link WHERE id_link = $id";
+            $sql = "SELECT * FROM categoria WHERE id_categoria = $id";
             $result = $conn->query($sql);
 
             // Verifica se há resultados
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                // Exibição do formulário de edição com os dados atuais do link
+                // Exibição do formulário de edição com os dados atuais da categoria
         ?>
-        <form method="post">
-            <input type="hidden" name="id" value="<?php echo $row['id_link']; ?>">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?php echo $row['nome']; ?>">
-            <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao"><?php echo $row['descricao']; ?></textarea>
-            <label for="link">Link:</label>
-            <input type="text" id="link" name="link" value="<?php echo $row['link']; ?>">
-            <input type="submit" value="Atualizar">
-        </form>
+                <form method="post">
+                    <input type="hidden" name="id" value="<?php echo $row['id_categoria']; ?>">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="<?php echo $row['nome_categoria']; ?>">
+                    <label for="icone">Ícone:</label>
+                    <input type="text" id="icone" name="icone" value="<?php echo $row['icone']; ?>">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao"><?php echo $row['descricao']; ?></textarea>
+                    <input type="submit" value="Atualizar">
+                </form>
         <?php
             } else {
-                echo "<p>Link não encontrado.</p>";
+                echo "<p>Categoria não encontrada.</p>";
             }
 
             // Fecha a conexão
             $conn->close();
         } else {
-            echo "<p>ID do link não especificado.</p>";
+            echo "<p>ID da categoria não especificado.</p>";
         }
         ?>
     </div>
 </body>
+
 </html>

@@ -27,17 +27,13 @@
 		<div class="branding docs-branding">
 			<div class="container-fluid position-relative py-2">
 				<div class="docs-logo-wrapper">
-					<div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon me-2"
-								src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Coder<span
-									class="text-alt">Docs</span></span></a></div>
+					<div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon me-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Coder<span class="text-alt">Docs</span></span></a></div>
 				</div><!--//docs-logo-wrapper-->
 				<div class="docs-top-utilities d-flex justify-content-end align-items-center">
 
 					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-						<li class="list-inline-item"><a href="https://github.com/MrMaia" target="_blank"><i
-									class="fab fa-github fa-fw"></i></a></li>
-						<li class="list-inline-item"><a href="https://www.instagram.com/allan.maia.92/"
-								target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="https://github.com/MrMaia" target="_blank"><i class="fab fa-github fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.instagram.com/allan.maia.92/" target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
 					</ul><!--//social-list-->
 					<div class="d-flex flex-row gap-3">
 						<a href="#" class="btn btn-primary d-none d-lg-flex position-relative">
@@ -63,8 +59,7 @@
 			<div class="page-intro single-col-max mx-auto">Aqui você vai achar, basta procurar.</div>
 			<div class="main-search-box pt-3 d-block mx-auto">
 				<form class="search-form w-100">
-					<input type="text" placeholder="Pesquise o que você procura..." name="search"
-						class="form-control search-input">
+					<input type="text" placeholder="Pesquise o que você procura..." name="search" class="form-control search-input">
 					<button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
 				</form>
 			</div>
@@ -91,7 +86,7 @@
 							</div><!--//card-body-->
 						</div><!--//card-->
 					</div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
+					<div class="col-12 col-lg-4 py-3">
 						<div class="card shadow-sm">
 							<div class="card-body">
 								<h5 class="card-title mb-3">
@@ -107,7 +102,7 @@
 							</div><!--//card-body-->
 						</div><!--//card-->
 					</div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
+					<div class="col-12 col-lg-4 py-3">
 						<div class="card shadow-sm">
 							<div class="card-body">
 								<h5 class="card-title mb-3">
@@ -123,7 +118,7 @@
 							</div><!--//card-body-->
 						</div><!--//card-->
 					</div><!--//col-->
-                    <div class="col-12 col-lg-4 py-3">
+					<div class="col-12 col-lg-4 py-3">
 						<div class="card shadow-sm">
 							<div class="card-body">
 								<h5 class="card-title mb-3">
@@ -168,14 +163,11 @@
 		<div class="footer-bottom text-center py-5">
 
 			<ul class="social-list list-unstyled pb-4 mb-0">
-				<li class="list-inline-item"><a href="https://github.com/MrMaia" target="_blank"><i
-							class="fab fa-github fa-fw"></i></a></li>
-				<li class="list-inline-item"><a href="https://www.instagram.com/allan.maia.92/" target="_blank"><i
-							class="fab fa-instagram fa-fw"></i></a></li>
+				<li class="list-inline-item"><a href="https://github.com/MrMaia" target="_blank"><i class="fab fa-github fa-fw"></i></a></li>
+				<li class="list-inline-item"><a href="https://www.instagram.com/allan.maia.92/" target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
 			</ul><!--//social-list-->
 
-			<small class="copyright">Desenvolvido por Allan Maia <i class="fas fa-heart" style="color: #fb866a;"></i> <a
-					class="theme-link" href="https://www.buymeacoffee.com/mrmaia" target="_blank">Buy Me a
+			<small class="copyright">Desenvolvido por Allan Maia <i class="fas fa-heart" style="color: #fb866a;"></i> <a class="theme-link" href="https://www.buymeacoffee.com/mrmaia" target="_blank">Buy Me a
 					Coffee</a></small>
 
 

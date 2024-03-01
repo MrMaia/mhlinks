@@ -8,10 +8,11 @@
         </div>
         <div class="pt-3 text-center">
             <a class="btn btn-light position-relative" href="">Entrar na Comunidade
-                <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger">
+                <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger" style="margin-right: 40px;">
                     EM BREVE
                     <span class="visually-hidden">unread messages</span>
                 </span>
+
             </a>
         </div>
     </div>

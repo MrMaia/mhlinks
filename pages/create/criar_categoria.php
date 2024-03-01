@@ -40,39 +40,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt-BR">
 
 <head>
-	<title>AjudaQui - Seu site dos links</title>
+    <title>AjudaQui - Seu site dos links</title>
 
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="coderdocs-logo.ico">
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="coderdocs-logo.ico">
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 
-	<!-- FontAwesome JS-->
-	<script defer src="assets/fontawesome/js/all.min.js"></script>
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
 
-	<!-- Theme CSS -->
-	<link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
 
 </head>
 
 <body>
     <?php include 'partials/header.php'; ?>
 
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    <label for="icone">Cole o código do ícone:</label><br>
-    <input type="text" id="icone" name="icone" required><br><br>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="icone">Cole o código do ícone:</label><br>
+        <input type="text" id="icone" name="icone" required><br><br>
 
-    <label for="nome_categoria">Nome da Categoria:</label><br>
-    <input type="text" id="nome_categoria" name="nome_categoria" required><br><br>
+        <label for="nome_categoria">Nome da Categoria:</label><br>
+        <input type="text" id="nome_categoria" name="nome_categoria" required><br><br>
 
-    <label for="descricao">Descrição da Categoria:</label><br>
-    <textarea id="descricao" name="descricao" required></textarea><br><br>
+        <label for="descricao">Descrição da Categoria:</label><br>
+        <textarea id="descricao" name="descricao" required></textarea><br><br>
 
-    <input type="submit" value="Enviar">
-</form>
+        <input type="submit" value="Enviar">
+    </form>
 
 </body>
