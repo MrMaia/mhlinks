@@ -29,6 +29,17 @@ if (isset($_GET['sub_categoria_id'])) {
         <script defer src="assets/fontawesome/js/all.min.js"></script>
         <!-- Theme CSS -->
         <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+        <!-- Custom JavaScript -->
+        <script>
+            function openLinkInNewTab(url) {
+                // Certifique-se de que a URL começa com http:// ou https:// para ser uma URL válida
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    url = 'http://' + url;
+                }
+                // Abra a URL em uma nova aba
+                window.open(url, '_blank');
+            }
+        </script>
     </head>
 
     <body>
@@ -60,7 +71,7 @@ if (isset($_GET['sub_categoria_id'])) {
                                         </div>
                                         <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                                             <div class="d-flex flex-column mt-4">
-                                                <a class="btn btn-primary btn-sm" href="<?php echo $link['link']; ?>" target="_blank">Acessar</a>
+                                                <button class="btn btn-primary btn-sm" onclick="openLinkInNewTab('<?php echo $link['link']; ?>')">Acessar</button>
                                                 <button class="btn btn-outline-primary btn-sm mt-2">Recomendar Site</button>
                                             </div>
                                         </div>
@@ -111,6 +122,17 @@ if (isset($_GET['sub_categoria_id'])) {
                 <script defer src="assets/fontawesome/js/all.min.js"></script>
                 <!-- Theme CSS -->
                 <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+                <!-- Custom JavaScript -->
+                <script>
+                    function openLinkInNewTab(url) {
+                        // Certifique-se de que a URL começa com http:// ou https:// para ser uma URL válida
+                        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                            url = 'http://' + url;
+                        }
+                        // Abra a URL em uma nova aba
+                        window.open(url, '_blank');
+                    }
+                </script>
             </head>
 
             <body>
@@ -142,7 +164,7 @@ if (isset($_GET['sub_categoria_id'])) {
                                                 </div>
                                                 <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                                                     <div class="d-flex flex-column mt-4">
-                                                        <a class="btn btn-primary btn-sm" href="<?php echo $link['link']; ?>" target="_blank">Acessar</a>
+                                                        <button class="btn btn-primary btn-sm" onclick="openLinkInNewTab('<?php echo $link['link']; ?>')">Acessar</button>
                                                         <button class="btn btn-outline-primary btn-sm mt-2">Recomendar Site</button>
                                                     </div>
                                                 </div>
@@ -161,7 +183,7 @@ if (isset($_GET['sub_categoria_id'])) {
             </body>
 
             </html>
-<?php
+    <?php
         } else {
             // Se não houver links relacionados à categoria, exibir mensagem de erro
             echo "Erro: Nenhum link encontrado para esta categoria.";
