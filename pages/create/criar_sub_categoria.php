@@ -1,6 +1,6 @@
 <?php
 // Inclui o arquivo de conexão
-include 'conexao.php';
+include '../../conexao.php';
 
 // Recupera todas as categorias do banco de dados
 $categorias = [];
@@ -25,13 +25,13 @@ try {
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
     <!-- FontAwesome JS-->
-    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <script defer src="../../assets/fontawesome/js/all.min.js"></script>
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+    <link id="theme-style" rel="stylesheet" href="../../assets/css/theme.css">
 </head>
 
 <body>
-    <?php include 'partials/header.php'; ?>
+    <?php include '../../partials/header.php'; ?>
 
     <h2>Criar Subcategoria</h2>
 

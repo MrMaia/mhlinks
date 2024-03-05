@@ -2,8 +2,8 @@
 		<div class="branding docs-branding">
 			<div class="container-fluid position-relative py-2">
 				<div class="docs-logo-wrapper">
-					<div class="site-logo"><a class="navbar-brand" href="index.php"><img class="logo-icon me-2"
-								src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Ajuda<span
+					<div class="site-logo"><a class="navbar-brand" href="../../index.php"><img class="logo-icon me-2"
+								src="../../assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Ajuda<span
 									class="text-alt">Qui</span></span></a></div>
 				</div><!--//docs-logo-wrapper-->
 				<div class="docs-top-utilities d-flex justify-content-end align-items-center">

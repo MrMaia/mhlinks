@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se todos os campos do formulário estão preenchidos
     if (!empty($_POST['icone']) && !empty($_POST['nome_categoria']) && !empty($_POST['descricao'])) {
         // Inclui o arquivo de conexão
-        include 'conexao.php';
+        include '../../conexao.php';
 
         // Prepara a instrução SQL para inserir dados na tabela categoria
         $sql = "INSERT INTO categoria (icone, nome_categoria, descricao) VALUES (:icone, :nome_categoria, :descricao)";
@@ -52,15 +52,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 
     <!-- FontAwesome JS-->
-    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <script defer src="../../assets/fontawesome/js/all.min.js"></script>
 
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+    <link id="theme-style" rel="stylesheet" href="../../assets/css/theme.css">
 
 </head>
 
 <body>
-    <?php include 'partials/header.php'; ?>
+    <?php include '../../partials/header.php'; ?>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="icone">Cole o código do ícone:</label><br>
