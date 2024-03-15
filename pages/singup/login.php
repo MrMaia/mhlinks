@@ -1,36 +1,48 @@
+<?php
+session_start(); // Inicia a sessão no início do arquivo
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $host = 'localhost';
+    $dbname = 'ajudaqui';
+    $user = 'root';
+    $pass = '';
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $sql = "SELECT id, senha, is_admin FROM usuarios WHERE email = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$email]);
+    $usuario = $stmt->fetch();
+
+    if ($usuario && password_verify($senha, $usuario['senha'])) {
+        // Armazena informações do usuário na sessão
+        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['is_admin'] = $usuario['is_admin'];
+        header("Location: ../../index.php"); // Redireciona para index.php
+        exit();
+    } else {
+        $erro_login = "Email ou senha incorretos.";
+    }
+}
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card my-5">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Login</h3>
-                    <form action="processa_login.php" method="post">
-                        <div class="form-group">
-                            <label for="username">Nome de usuário</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-                    </form>
-                    <div class="text-center mt-3">
-                        <a href="register.php">Cadastre-se</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <h2>Login</h2>
+    <form method="post">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required><br><br>
+        <input type="submit" value="Entrar">
+    </form>
+    <?php if (!empty($erro_login)): ?>
+        <p><?php echo $erro_login; ?></p>
+    <?php endif; ?>
 </body>
 </html>
