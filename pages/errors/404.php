@@ -36,7 +36,6 @@
                             Comunidade
                             <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger">
                                 EM BREVE
-                                <span class="visually-hidden">unread messages</span>
                             </span>
                         </a>
                         <a href="#" class="btn btn-primary d-none d-lg-flex">Entrar</a>

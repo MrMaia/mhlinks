@@ -1,4 +1,13 @@
 <?php
+session_start(); // Inicia a sessão PHP ou continua a sessão atual
+
+// Verifica se o usuário está logado e se é um administrador
+if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['is_admin']) || $_SESSION['is_admin'] != 1) {
+    // Se não estiver logado ou não for administrador, redireciona para a página de login
+    header("Location: ../../index.php"); // Ajuste o caminho conforme necessário
+    exit; // Interrompe a execução do script
+}
+
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se todos os campos do formulário estão preenchidos
@@ -23,56 +32,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Verifica se a consulta foi bem-sucedida
             if ($stmt->rowCount() > 0) {
-                echo "Dados inseridos com sucesso!";
+                echo "<script>alert('Dados inseridos com sucesso!');</script>";
             } else {
-                echo "Erro ao inserir os dados.";
+                echo "<script>alert('Erro ao inserir os dados.');</script>";
             }
         } catch (PDOException $e) {
-            echo "Erro ao inserir os dados: " . $e->getMessage();
+            echo "<script>alert('Erro ao inserir os dados: " . $e->getMessage() . "');</script>";
         }
     } else {
-        echo "Todos os campos do formulário devem ser preenchidos.";
+        echo "<script>alert('Todos os campos do formulário devem ser preenchidos.');</script>";
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <title>AjudaQui - Seu site dos links</title>
-
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="coderdocs-logo.ico">
-
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
-
-    <!-- FontAwesome JS-->
     <script defer src="../../assets/fontawesome/js/all.min.js"></script>
-
-    <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="../../assets/css/theme.css">
-
 </head>
-
 <body>
     <?php include '../../partials/header.php'; ?>
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="icone">Cole o código do ícone:</label><br>
-        <input type="text" id="icone" name="icone" required><br><br>
+    <div class="container mt-5">
+        <h2>Adicionar Nova Categoria</h2>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <label for="icone">Ícone (classe do FontAwesome):</label><br>
+            <input type="text" id="icone" name="icone" required><br><br>
 
-        <label for="nome_categoria">Nome da Categoria:</label><br>
-        <input type="text" id="nome_categoria" name="nome_categoria" required><br><br>
+            <label for="nome_categoria">Nome da Categoria:</label><br>
+            <input type="text" id="nome_categoria" name="nome_categoria" required><br><br>
 
-        <label for="descricao">Descrição da Categoria:</label><br>
-        <textarea id="descricao" name="descricao" required></textarea><br><br>
+            <label for="descricao">Descrição da Categoria:</label><br>
+            <textarea id="descricao" name="descricao" required></textarea><br><br>
 
-        <input type="submit" value="Enviar">
-    </form>
-
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </body>
+</html>

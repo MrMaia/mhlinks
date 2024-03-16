@@ -1,6 +1,12 @@
 <?php
+session_start();
 // Inclui o arquivo de conexão
 include '../../conexao.php';
+
+if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['is_admin']) || $_SESSION['is_admin'] != 1) {
+    header("Location: ../../index.php");
+    exit;
+}
 
 // Recupera todas as categorias do banco de dados
 $categorias = [];
