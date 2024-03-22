@@ -57,6 +57,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="vh-50">
         <div class="container py-5 h-75">
             <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="callout-block callout-block-info">
+                    <div class="content">
+                        <h4 class="callout-title">
+                            <span class="callout-icon-holder me-1">
+                                <i class="fas fa-info-circle"></i>
+                            </span>
+                            Nota
+                        </h4>
+                        <p>A autenticação no site atualmente está ativa apenas para fins de teste interno. Após o lançamento da versão oficial, será necessário que todos os usuários criem novas contas.</p>
+                    </div>
+                </div>
                 <div class="col-md-8 col-lg-7 col-xl-6">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
                 </div>

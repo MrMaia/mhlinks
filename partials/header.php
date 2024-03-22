@@ -9,6 +9,7 @@
                 <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
                     <li class="list-inline-item"><a href="https://github.com/MrMaia" target="_blank"><i class="fab fa-github fa-fw"></i></a></li>
                     <li class="list-inline-item"><a href="https://www.instagram.com/allan.maia.92/" target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a href="https://discord.gg/JQCwFgHS4F" target="_blank"><i class="fa-brands fa-discord fa-fw"></i></a></li>
                 </ul>
                 <div class="d-flex flex-row gap-3">
                     <a href="#" class="btn btn-primary d-none d-lg-flex position-relative">
