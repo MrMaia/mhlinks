@@ -22,10 +22,11 @@
                         <!-- Botão de Perfil (opcional) -->
                         <div class="dropdown text-end justify-content-center">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://github.com/mdo.png" alt="mdo" width="36" height="36" class="rounded-circle">
+                                <img src="https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png" alt="mdo" width="36" height="36" class="rounded-circle">
                             </a>
                             <ul class="dropdown-menu text-small">
-                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Perfil <span class="badge rounded-pill bg-danger text-white">
+                            EM BREVE</span></a></li>
                                 <li><a class="dropdown-item" href="#">Comunidade <span class="badge rounded-pill bg-danger text-white">
                             EM BREVE</span></a></li>
                                 <li>
@@ -35,7 +36,7 @@
                             </ul>
                         </div>
                     <?php else : ?>
-                        <a href="../pages\singup\login.php" class="btn btn-primary d-none d-lg-flex">Entrar</a>
+                        <a href="../../pages\singup\login.php" class="btn btn-primary d-none d-lg-flex">Entrar</a>
                     <?php endif; ?>
                 </div>
             </div>
