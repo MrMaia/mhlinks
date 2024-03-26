@@ -74,7 +74,9 @@ if (isset($_GET['sub_categoria_id'])) {
                                         <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                                             <div class="d-flex flex-column mt-4">
                                                 <button class="btn btn-primary btn-sm" onclick="openLinkInNewTab('<?php echo $link['link']; ?>')">Acessar</button>
-                                                <button class="btn btn-outline-primary btn-sm mt-2">Recomendar Site</button>
+                                                <button class="btn btn-outline-primary btn-sm mt-2">Detalhes <span class="badge rounded-pill bg-danger">
+                    EM BREVE
+                </span></button>
                                             </div>
                                         </div>
                                     </div>
@@ -185,7 +187,7 @@ if (isset($_GET['sub_categoria_id'])) {
             </body>
 
             </html>
-    <?php
+<?php
         } else {
             // Se não houver links relacionados à categoria, exibir mensagem de erro
             echo "Erro: Nenhum link encontrado para esta categoria.";
